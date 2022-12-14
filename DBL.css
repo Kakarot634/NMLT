@@ -1,0 +1,12 @@
+button{
+    width: 30%; height: 40px;
+    color: red;
+}
+h1{
+    color: gold;
+}
+#name{
+    color: red;
+    font-size: 300%;
+    text-transform: uppercase;
+}
