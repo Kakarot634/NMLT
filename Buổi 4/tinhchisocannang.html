@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Chieucao = parseFloat(prompt("Nhập Chiều Cao"));
+        console.log(typeof(Chieucao));
+        let Cannang = parseFloat(prompt("Nhập Cân Nặng"));
+        console.log(typeof(Cannang));
+        let BMI = Cannang/(Chieucao*Chieucao)
+        if (BMI>40){
+            alert("Béo Phì Cấp Độ III");
+        } else if (35<=BMI){
+            alert("Béo Phì Cấp Độ II");
+        } else if (30<=BMI){
+            alert("Béo Phì Cấp Độ I");
+        } else if (25<=BMI){
+            alert("Thừa Cân");
+        } else if (18.5<=BMI){
+            alert("Bình Thường");
+        } else if (17<=BMI){
+            alert("Gầy Cấp Độ I");
+        } else if (16<=BMI){
+            alert("Gầy Cấp Độ II");
+        } else {
+            alert("Gầy Cấp Độ III");
+        }
+    </script>
+</body>
+</html>

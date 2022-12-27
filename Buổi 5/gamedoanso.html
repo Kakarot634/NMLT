@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="DB.css">
+<body>
+    <button onclick="getPlay();" > Chơi </button>
+  <h1> Luật Chơi </h1>
+  <ul> <h1> Luật Chơi Cho Mấy Thằng Ngờ U Ngu =)))</h1></ul>
+  <li>Game Sinh Ra Là Để Cho Vui Chứ Không Quạo:)))</li>
+  <li>Tôi Cho Bạn 2 Lượt Để Nhập Số </li>
+  <p id="name"> Chúc May Mắn </p>
+  
+    <script>  
+        function getPlay() {
+             let nhapthap = parseInt(prompt("nhập số random thấp nhât"));
+             let thapnhat = Math.floor(Math.random()*nhapthap);
+             console.log(thapnhat);
+             let nhapcao1 = parseInt(prompt("nhập số random cao nhât đầu tiên"));
+             let nhapcao2 = parseInt(prompt("nhập số random cao nhât cuối cùng "));
+             let caonhat =  Math.floor(Math.random()*nhapcao2)+nhapcao1 ; 
+             console.log(caonhat);
+             for (let luot = 0; luot <= 2; luot++) {
+              let dudoan = parseInt( prompt("nhập số mà bạn muốn dự đoán  "));
+               if (dudoan==nhapcao1 || dudoan==nhapcao2 || dudoan == nhapthap) {
+                alert("Chọn Số Ban Đầu Rồi ");
+              }
+                if (dudoan==thapnhat) {
+              if (dudoan==caonhat) {
+                alert("Chúc Mừng Bạn Đã Thắng Với Tư Cách Là Người Chơi =)))");
+              }
+            }
+            if (dudoan!=thapnhat) {
+              if (dudoan!=caonhat) {
+                alert("Bạn Còn Non lắm");
+              }
+            }
+            if (dudoan==thapnhat) {
+              if (dudoan!=caonhat) {
+                alert("Chỉ Đúng Một Số Thôi Anh Bạn À, Chơi Lại Từ Đầu Đi");
+              }
+                }
+                if (dudoan!=thapnhat) {
+              if (dudoan==caonhat) {
+                alert("Chỉ Đúng Một Số Thôi Anh Bạn À, Chơi Lại Từ Đầu Đi");
+              }
+                }
+             }
+              }
+        </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var sotienvay= parseInt(prompt("Số tiền cần vay 'triệu'"));
+        var laisuat= parseInt(prompt("Nhập lãi suất ngân hàng '&'"));
+        console.log(typeof(laisuat));
+        var sonam=parseInt(prompt("Nhập số năm vay"));
+        var tienlai=(sotienvay*laisuat)/100;
+        var sotien= sotienvay+(tienlai*sonam);
+        alert("Số tiền phải trả" + sotien + "Triệu đồng");
+    </script>
+</body>
+</html>
