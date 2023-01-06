@@ -1,85 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="CaseStudy.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <style>
-        body {
-            background-color: bisque;
-        }
-    </style>
-</head>
-<body>
-    <div class="center">
-        <h1>Quản Lý Người Chơi Valorant</h1>
-    </div>
-      <div>
-        <label for="">Họ Và Tên :</label>
-        <input type="text" id="hovaten" placeholder="Điền Tên Vào Đây">
-      </div>
-      <div>
-        <label for="">ID :</label>
-        <input type="number" id="id" placeholder="Điền ID">
-      </div>
-      <div>
-        <label for="">Tên Đội :</label>
-        <input type="text" id="tendoi" placeholder="Điền Tên Đội">
-      </div>
-      <div>
-        <label for="">Email :</label>
-        <input type="text" id="email" placeholder="Điền Email Vào Đây">
-      </div>
-      <div>
-      <button onclick="add()">Nhập Vào</button>
-      </div>
-      <table class="table table-dark table-striped-columns" id="render">
-        <thead>
-          <tr>
-            <th>Họ Và Tên</th>
-            <th>ID</th>
-            <th>Tên Đội</th>
-            <th>Email</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-      </table>
-    <script>
-      var data=[]
 
-      function add(){
-        var item_hovaten= document.getElementById("hovaten").value;
-        var item_id= document.getElementById("id").value;
-        var item_tendoi= document.getElementById("tendoi").value;
-        var item_email= document.getElementById("email").value;
-        var item ={
-          hovaten :item_hovaten,
-          id:item_id,
-          tendoi :item_tendoi,
-          email :item_email
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="CaseStudy.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: gold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="center">
+    <h1>Quản Lý Người Chơi Valorant</h1>
+  </div>
+  <div class="label1">
+    <label for="">
+      <h4>Họ Và Tên :</h4>
+    </label>
+    <input type="text" id="hovaten" placeholder="Điền Tên Vào Đây">
+  </div>
+  <div class="label2">
+    <label for="">
+      <h4>ID :</h4>
+    </label>
+    <input type="number" id="id" placeholder="Điền ID">
+  </div>
+  <div class="label3">
+    <label for="">
+      <h4>Tên Đội :</h4>
+    </label>
+    <input type="text" id="tendoi" placeholder="Điền Tên Đội">
+  </div>
+  <div class="label4">
+    <label for="">
+      <h4>Email :</h4>
+    </label>
+    <input type="text" id="email" placeholder="Điền Email Vào Đây">
+  </div>
+  <div class="button1">
+    <button onclick="add()"><b>Nhập Vào</b></button>
+  </div>
+  <table class="table table-dark table-striped-columns" id="render">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Họ Và Tên</th>
+        <th>ID</th>
+        <th>Tên Đội</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+  </table>
+  <script>
+    var data = [];
+
+    function add() {
+      var item_hovaten = document.getElementById("hovaten").value;
+      var item_id = document.getElementById("id").value;
+      var item_tendoi = document.getElementById("tendoi").value;
+      var item_email = document.getElementById("email").value;
+      if (item_hovaten == "" || item_id == "" || item_tendoi == "" || item_email == "") {
+        alert("Vui Lòng Nhập Đủ Thông Tin");
+      } else {
+        var item = {
+          hovaten: item_hovaten,
+          id: item_id,
+          tendoi: item_tendoi,
+          email: item_email
         }
-        let index = data.findIndex((c)=>c.id=item.id)
-        if(index>=0){ 
-          data.splice(index,1,item)
-        }else{
-          data.push(item)
-        }
-        render()
-        clear()
       }
-      function render(){
-        table = `<tr>
+      let index = data.findIndex((c) => c.id == item.id)
+      if (index >= 0) {
+        data.splice(index, 1, item)
+      } else {
+        data.push(item)
+      }
+      render()
+      clear()
+    }
+    function render() {
+      table = `<tr>
+            <th>STT</th>
             <th>Họ Và Tên</th>
             <th>ID</th>
             <th>Tên Đội</th>
             <th>Email</th>
             <th>Actions</th>
           </tr>`
-        for(let i=0;i<data.length;i++){
-          table += `<tr>
+      for (let i = 0; i < data.length; i++) {
+        var value = i;
+        table += `<tr>
+            <td>${value += 1}</td>
             <td>${data[i].hovaten}</td>
             <td>${data[i].id}</td>
             <td>${data[i].tendoi}</td>
@@ -89,35 +108,37 @@
               <button onclick="editItem(${data[i].id})">Chỉnh sửa</button>
               </th>
           </tr>`
-        }
-        document.getElementById("render").innerHTML= table
       }
-      function clear(){
-        document.getElementById("hovaten").value="";
-        document.getElementById("id").value="";
-        document.getElementById("tendoi").value="";
-        document.getElementById("email").value=""
-      }
-      function deleteItem(x){
-        for(let i=0;i<data.length;i++){
-          if(data[i].id==x){
-            data.splice(i,1)
+      document.getElementById("render").innerHTML = table
+    }
+    function clear() {
+      document.getElementById("hovaten").value = "";
+      document.getElementById("id").value = "";
+      document.getElementById("tendoi").value = "";
+      document.getElementById("email").value = ""
+    }
+    function deleteItem(x) {
+      if (confirm("Bạn Có Muốn Xóa Thông Tin Vừa Được Điền Vào Không?") == true)
+        for (let i = 0; i < data.length; i++) {
+          if (data[i].id == x) {
+            data.splice(i, 1)
 
             render()
           }
         }
-      }
-      function editItem(x){
-        for(let i=0;i<data.length;i++){
-          if(data[i].id==x){
+    }
+    function editItem(x) {
+      if (confirm("Bạn Muốn Có Chỉnh Sửa Lại Thông Tin Đã Bị Điền Sai Không?") == true)
+        for (let i = 0; i < data.length; i++) {
+          if (data[i].id == x) {
             document.getElementById("hovaten").value = data[i].hovaten;
             document.getElementById("id").value = data[i].id;
             document.getElementById("tendoi").value = data[i].tendoi;
             document.getElementById("email").value = data[i].email;
           }
         }
-      }
-    </script>
+    }
+  </script>
 </body>
 
 </html>

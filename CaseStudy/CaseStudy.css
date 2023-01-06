@@ -1,4 +1,21 @@
 .center{
     text-align: center;
     border: 3px solidgreen;
+    background-color: bisque;
+}
+.label1{
+    display: inline-block;
+    margin-left: auto;
+}
+.label2{
+    display: inline-block;
+}
+.label3{
+    display: inline-block;
+}
+.label4{
+    display: inline-block;
+}
+.button1{
+    display: inline-block;
 }
